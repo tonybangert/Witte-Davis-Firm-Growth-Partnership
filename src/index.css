@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary palette */
+  --color-forest: #1B3B2F;
+  --color-forest-soft: #244D3D;
+  --color-ink: #1F2937;
+  --color-cream: #F4EFE6;
+  --color-bone: #FAFAF7;
+  --color-pl-navy: #102D50;
+
+  /* Accents */
+  --color-copper: #B86F3D;
+  --color-copper-soft: #C98559;
+  --color-watershed: #3D6A8A;
+  --color-sage: #8FA68E;
+
+  /* Neutrals */
+  --color-rule: #D9D1C0;
+  --color-muted: #6B7A8F;
+
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: var(--color-bone);
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* 16:9 stage: scales to viewport, locked aspect, designed for 1920x1080 share */
+.slide-stage {
+  width: min(96vw, calc(94vh * 16 / 9));
+  aspect-ratio: 16 / 9;
+}
+
+/* Easing token from the brief */
+.ease-deliberate {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
